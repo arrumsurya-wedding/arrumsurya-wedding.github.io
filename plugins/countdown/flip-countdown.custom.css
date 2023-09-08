@@ -15,7 +15,7 @@
   .flip-clock__slot {
     font-size: calc(0.5rem + 1vw);
   }
-  .card {
+  .card__ {
     display: block;
     position: relative;
     padding-bottom: 0.72em;

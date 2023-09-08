@@ -1,5 +1,5 @@
+$pink: #f14e95;
 $shadow: 0 2px 2px rgb(0 0 0 / 0.5);
-
 // Work-Sans
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap');
 // Tangerine
@@ -16,10 +16,10 @@ $shadow: 0 2px 2px rgb(0 0 0 / 0.5);
 .f-sacramento {
     font-family: 'Sacramento', cursive;
     font-weight: bold;
-    color: #f14e95;
+    color: $pink;
 }
 .text-pink {
-    color: #f14e95;
+    color: $pink;
 }
 
 .heading {
@@ -28,12 +28,15 @@ $shadow: 0 2px 2px rgb(0 0 0 / 0.5);
 
 .btn-outline-pink {
     background-color: white;
-    color: #f14e95;
+    color: $pink;
 }
 .btn-outline-pink:hover {
     color: white;
-    background-color: #f14e95;
+    background-color: $pink;
 }
+html {
+    scroll-behavior: smooth;
+}  
 body {
     width: 100%;
     min-height: 800vh;
@@ -41,6 +44,44 @@ body {
     overflow-x: hidden;
     font-family: 'Work Sans', sans-serif;
     color: #fff;
+}
+p {
+    margin: 0;
+}
+section {
+    display: flex;
+    min-height: 100vh;
+}
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100vw;
+    padding: 0 20px 20px;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    text-align: center;
+    .wrapper {
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(4px);
+        padding: 10px;
+        border-radius: 100px;
+        display: inline-block;
+        a {
+            font-size: 1rem;
+            color: $pink;
+            border-radius: 100px;
+            margin: 0 3px;
+        }
+        a:hover {
+            background-color: rgba(241, 78, 149, 0.3);
+            color: #ffffff;
+        }
+        a.active {
+            background-color: $pink;
+            color: rgb(253, 251, 247);
+        }
+    }
 }
 #cover {
     h1, h3, h5, p {
@@ -75,16 +116,30 @@ body {
     .col-lg-5:last-child .col-8 div {
         margin-right: auto;
     }
-
+}
+#detail {
+    .divider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: relative;
+        margin: 10px 0;
+        i {
+            margin: 0 10px;
+        }
+    }
+    .divider::before, .divider::after {
+        content: '';
+        flex-grow: 1;
+        height: 1px;
+        background-color: white;
+    }
 }
 @media (max-width: 567px) {
     html {
         font-size: 80%;
     }
-    #opening .container .quotes {
-        height: max-content !important;
-    }
-    #couple .container .merge {
+    #opening .container .merge {
         height: max-content !important;
     }
 }
