@@ -1,0 +1,90 @@
+$shadow: 0 2px 2px rgb(0 0 0 / 0.5);
+
+// Work-Sans
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap');
+// Tangerine
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+.f-tangerine {
+    font-family: "Tangerine", cursive;
+}
+// Dancing Script
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+.f-dancing {
+    font-family: 'Dancing Script', cursive;
+}
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+.f-sacramento {
+    font-family: 'Sacramento', cursive;
+    font-weight: bold;
+    color: #f14e95;
+}
+.text-pink {
+    color: #f14e95;
+}
+
+.heading {
+    font: bold 5rem 'Sacramento', cursive;
+}
+
+.btn-outline-pink {
+    background-color: white;
+    color: #f14e95;
+}
+.btn-outline-pink:hover {
+    color: white;
+    background-color: #f14e95;
+}
+body {
+    width: 100%;
+    min-height: 800vh;
+    background-image: linear-gradient(to bottom, #000 0, #022235 15%, #1589d2 100%);
+    overflow-x: hidden;
+    font-family: 'Work Sans', sans-serif;
+    color: #fff;
+}
+#cover {
+    h1, h3, h5, p {
+        text-shadow: $shadow;
+    }
+    h1 {
+        font: calc(4rem + 4.5vw) "Tangerine", cursive;
+    }
+    ::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../img/hand-in-hand-removebg.png);
+        background-size: cover;
+        background-position: center;
+        filter: grayscale(100%);
+        mask-image: linear-gradient(rgba(2, 34, 53, 1) 85%, rgba(2, 34, 53, 0));
+        z-index: -1;
+    }
+}
+#couple {
+    .col-8 div {
+        width: max-content;
+        text-align: center;
+    }
+    .col-lg-5:first-child .col-8 div {
+        margin-left: auto;
+    }
+    .col-lg-5:last-child .col-8 div {
+        margin-right: auto;
+    }
+
+}
+@media (max-width: 567px) {
+    html {
+        font-size: 80%;
+    }
+    #opening .container .quotes {
+        height: max-content !important;
+    }
+    #couple .container .merge {
+        height: max-content !important;
+    }
+}
