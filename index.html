@@ -206,30 +206,5 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-	<script>
-document.querySelector('#opening a').addEventListener('click', function() {
-    // Periksa apakah browser mendukung notifikasi
-    if ('Notification' in window) {
-        // Meminta izin untuk menampilkan notifikasi
-        Notification.requestPermission().then(function(permission) {
-            if (permission === 'granted') {
-                // Atur tanggal dan waktu notifikasi
-                let targetDate = new Date('2023-09-09T10:30:00'); // Ganti dengan tanggal dan jam yang diinginkan
-                let now = new Date();
-
-                // Cek apakah saat ini sesuai dengan tanggal dan jam yang ditentukan
-                if (now.getTime() >= targetDate.getTime()) {
-                    // Membuat objek notifikasi
-                    let notification = new Notification('Judul Notifikasi', {
-                        body: 'Isi Notifikasi'
-                    });
-                }
-            }
-        });
-    } else {
-        alert('Browser tidak mendukung notifikasi.');
-    }
-});
-	</script>
 </body>
 </html>
