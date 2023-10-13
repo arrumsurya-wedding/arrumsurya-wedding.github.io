@@ -80,6 +80,9 @@ nav .wrapper a {
   border-radius: 100px;
   margin: 0 3px;
 }
+nav .wrapper a span {
+  display: none;
+}
 nav .wrapper a:hover {
   background-color: rgba(241, 78, 149, 0.3);
   color: #ffffff;
@@ -87,6 +90,11 @@ nav .wrapper a:hover {
 nav .wrapper a.active {
   background-color: #f14e95;
   color: rgb(253, 251, 247);
+}
+nav .wrapper a.active span {
+  margin-left: 0.5rem;
+  display: inline !important;
+  font-size: 1rem !important;
 }
 
 #cover h1, #cover h3, #cover h5, #cover p {
