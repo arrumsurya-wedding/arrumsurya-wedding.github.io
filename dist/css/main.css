@@ -75,6 +75,9 @@ nav .wrapper {
   display: inline-block;
 }
 nav .wrapper a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   color: #f14e95;
   border-radius: 100px;
