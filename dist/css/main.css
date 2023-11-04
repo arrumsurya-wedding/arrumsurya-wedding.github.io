@@ -100,6 +100,30 @@ nav .wrapper a.active span {
   font-size: 1rem !important;
 }
 
+.left-widget {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  z-index: 99;
+  border-radius: 50%;
+  left: 16px;
+  bottom: 90px;
+}
+.btn-audio {
+  color: white;
+  fill: white;
+}
+.fa-compact-disc:before {
+  content: "\f51f";
+  font-size: 40px;
+}
+.btn-donation {
+  bottom: 130px !important;
+  border: solid 1px #e6e6e6;
+  background: #fff;
+  color: #0d6599;
+}
+
 #cover h1, #cover h3, #cover h5, #cover p {
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
