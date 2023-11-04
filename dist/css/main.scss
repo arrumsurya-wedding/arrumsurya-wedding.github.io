@@ -83,6 +83,31 @@ nav {
         }
     }
 }
+
+.left-widget {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  z-index: 99;
+  border-radius: 50%;
+  left: 16px;
+  bottom: 90px;
+}
+.btn-audio {
+  color: white;
+  fill: white;
+}
+.fa-compact-disc:before {
+  content: "\f51f";
+  font-size: 40px;
+}
+.btn-donation {
+  bottom: 130px !important;
+  border: solid 1px #e6e6e6;
+  background: #fff;
+  color: #0d6599;
+}
+
 #cover {
     h1, h3, h5, p {
         text-shadow: $shadow;
