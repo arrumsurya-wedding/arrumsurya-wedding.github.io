@@ -1,0 +1,287 @@
+/* Work-Sans : For default font */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap");
+/* Tangerine : For couple font */
+@import url("https://fonts.googleapis.com/css2?family=Tangerine&display=swap");
+/* Dancing Script : For guest font */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+/* Sacramento : For title font */
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+/* font: style variant weight stretch size line-height family; */
+.bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+canvas {
+  display: block;
+  margin: 2em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 1000vh;
+  background-image: linear-gradient(to bottom, #000 0, #022235 15%, #1589d2 100%);
+  overflow-x: hidden;
+  font-family: "Work Sans", sans-serif;
+  color: #fff;
+}
+body aside {
+  height: 25vh;
+}
+body aside .icon-wrapper {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  animation: rotating 4s linear infinite;
+  cursor: pointer;
+}
+body section {
+  display: flex;
+  min-height: 100vh;
+}
+body p {
+  margin: 0;
+}
+
+/* NAVBAR */
+nav .wrapper {
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 100px;
+  display: inline-block;
+}
+nav .wrapper a {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #f14e95;
+  border-radius: 50%;
+  margin: 0 3px;
+}
+nav .wrapper a span {
+  display: none;
+}
+nav .wrapper a:hover {
+  background-color: rgba(241, 78, 149, 0.3);
+  color: #ffffff;
+}
+nav .wrapper a.active {
+  width: -moz-max-content !important;
+  width: max-content !important;
+  background-color: #f14e95;
+  color: rgb(253, 251, 247);
+  border-radius: 100px;
+}
+nav .wrapper a.active span {
+  margin-left: 0.3rem;
+  display: inline !important;
+}
+
+#cover h1 {
+  color: #f14e95;
+  font: bold calc(4rem + 4.5vw) "Tangerine", cursive;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+#cover ::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 96%;
+  background-image: url(../img/IMG_6166.JPG);
+  background-size: cover;
+  background-position: 50% 68%;
+  z-index: -1;
+}
+
+#story .timeline {
+  list-style: none;
+  padding: 1.4rem 0;
+  margin-top: 1rem;
+  position: relative;
+}
+#story .timeline li {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+#story .timeline li .timeline-image {
+  width: 160px;
+  height: 160px;
+  background-color: #ccc;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#story .timeline li .timeline-panel {
+  width: 40%;
+  float: left;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  position: relative;
+  border-radius: 8px;
+  background-color: #fff;
+}
+#story .timeline li .timeline-panel::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  border-top: 15px solid transparent;
+  border-left: 15px solid #ccc;
+  border-right: 0 solid #ccc;
+  border-bottom: 15px solid transparent;
+  top: 70px;
+  right: -15px;
+}
+#story .timeline li .timeline-panel::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 14px solid transparent;
+  top: 71px;
+  right: -13px;
+}
+#story .timeline li .timeline-panel.first-child::after {
+  border-left: 14px solid #f14e95;
+  border-right: 0 solid #f14e95;
+}
+#story .timeline li::before,
+#story .timeline li::after {
+  content: "";
+  display: table;
+}
+#story .timeline li::after {
+  clear: both;
+}
+#story .timeline li.timeline-inverted .timeline-panel {
+  float: right;
+}
+#story .timeline li.timeline-inverted .timeline-panel::before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+#story .timeline li.timeline-inverted .timeline-panel::after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -13px;
+  right: auto;
+}
+#story .timeline::before {
+  content: "";
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 1px;
+  background-color: #ccc;
+  left: 50%;
+}
+
+#modal .nav-pills > .nav-link {
+  border-radius: 4px 4px 0 0;
+}
+#modal .carousel-indicators [data-bs-target] {
+  width: 10px; /* change width */
+  height: 10px; /* change height */
+  border-radius: 100%;
+}
+
+/* Media Query */
+/* laptop */
+@media (max-width: 992px) {
+  #story .timeline::before {
+    left: 60px;
+  }
+  #story .timeline li .timeline-image {
+    left: 15px;
+    margin-left: 45px;
+    top: 16px;
+  }
+  #story .timeline li .timeline-panel {
+    width: calc(100% - 200px);
+    float: right;
+  }
+  #story .timeline li .timeline-panel::before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+  #story .timeline li .timeline-panel::after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -13px;
+    right: auto;
+  }
+}
+/* tablet */
+@media (max-width: 768px) {
+  #story .timeline li .timeline-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+/* mobile phone */
+@media (max-width: 576px) {
+  #opening .container .merge {
+    height: -moz-max-content !important;
+    height: max-content !important;
+  }
+  #story .timeline li .timeline-image {
+    width: 80px;
+    height: 80px;
+  }
+  #story .timeline li .timeline-panel {
+    width: 63%;
+    transform: translateX(-20px);
+  }
+  #story .timeline li .timeline-panel::before {
+    top: 37px;
+  }
+  #story .timeline li .timeline-panel::after {
+    top: 38px;
+  }
+  #story .timeline li .timeline-panel.first-child::after {
+    border-left: 0 solid #f14e95;
+    border-right: 14px solid #f14e95;
+  }
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}/*# sourceMappingURL=main.css.map */
