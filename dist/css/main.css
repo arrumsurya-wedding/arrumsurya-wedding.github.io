@@ -1,12 +1,8 @@
-/* Work-Sans : For default font */
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap");
-/* Tangerine : For couple font */
 @import url("https://fonts.googleapis.com/css2?family=Tangerine&display=swap");
-/* Dancing Script : For guest font */
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-/* Sacramento : For title font */
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
-/* font: style variant weight stretch size line-height family; */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap");
 .bg-canvas {
   position: fixed;
   top: 0;
@@ -62,7 +58,6 @@ body p {
   margin: 0;
 }
 
-/* NAVBAR */
 nav .wrapper {
   background-color: rgba(255, 255, 255, 0.3);
   -webkit-backdrop-filter: blur(4px);
@@ -212,13 +207,11 @@ nav .wrapper a.active span {
   border-radius: 4px 4px 0 0;
 }
 #modal .carousel-indicators [data-bs-target] {
-  width: 10px; /* change width */
-  height: 10px; /* change height */
+  width: 10px;
+  height: 10px;
   border-radius: 100%;
 }
 
-/* Media Query */
-/* laptop */
 @media (max-width: 992px) {
   #story .timeline::before {
     left: 60px;
