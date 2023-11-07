@@ -34,7 +34,7 @@ html {
 
 body {
   width: 100%;
-  min-height: 1000vh;
+  min-height: 600vh;
   background-image: linear-gradient(to bottom, #000 0, #022235 15%, #1589d2 100%);
   overflow-x: hidden;
   font-family: "Work Sans", sans-serif;
