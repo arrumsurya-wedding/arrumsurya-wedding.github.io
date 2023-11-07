@@ -3,6 +3,9 @@
     font-weight: bold;
     color: #f14e95;
 } 
+.f-arabic {
+    font-family: 'Noto Naskh Arabic', serif;
+}
 .text-pink {
     color: #f14e95;
 }
