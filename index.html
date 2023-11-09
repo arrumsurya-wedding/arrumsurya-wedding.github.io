@@ -552,6 +552,10 @@
 				<div class="col-12 col-lg-1 p-0">
 					<button class="btn btn-success rasio-1x1 rounded-circle"
 						data-bs-toggle="modal" data-bs-target="#modal"
+						data-bs-toggle-2="popover" data-bs-placement="right"
+						data-bs-title="Amplop Digital"
+						data-bs-content="Sekarang hadiahmu bisa tersampaikan secara digital."
+						data-bs-trigger="hover focus"
 					>
 						<i class="bi bi-gift-fill"></i>
 					</button>
@@ -727,5 +731,11 @@
 <!-- CUSTOM -->
 <script src="./dist/js/trigger.js"></script>
 <script src="./dist/js/features.js"></script>
+<script>
+	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle-2="popover"]'))
+	var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+	  	return new bootstrap.Popover(popoverTriggerEl)
+	})
+</script>
 </body>
 </html>
