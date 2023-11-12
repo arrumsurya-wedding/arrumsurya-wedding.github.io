@@ -733,39 +733,7 @@
 <script src="./dist/js/trigger.js"></script>
 <script src="./dist/js/features.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-        // const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
-        // const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle-2="popover"]'))
-        // const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        //   	return new bootstrap.Popover(popoverTriggerEl, {
-        // 	})
-        // })
-        const popoverElement = document.querySelector('[data-bs-toggle-2="popover"]');
-        const popover = new bootstrap.Popover(popoverElement, {
-			template:'<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-header bg-pink"></h3><div class="popover-body"></div></div>'
-		});
-        let popoverShown = false; // Tambahkan variabel untuk melacak apakah popover sudah ditampilkan
 
-        function showPopoverIfInSection(sectionId) {
-            const section = document.getElementById(sectionId);
-			const sectionTop = section.offsetTop;
-			const sectionBottom = sectionTop + section.offsetHeight;
-			const scrollPosition = window.scrollY;
-
-            if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom && !popoverShown) {
-                popover.show();
-                popoverShown = true; // Set variabel popoverShown menjadi true setelah popover ditampilkan
-            }
-        }
-
-        // Panggil fungsi untuk menampilkan popover jika pengguna berada di section tertentu
-        showPopoverIfInSection('gallery'); // Ganti dengan ID dari section yang ingin Anda monitor
-
-        window.addEventListener('scroll', function() {
-            showPopoverIfInSection('gallery'); // Ganti dengan ID dari section yang ingin Anda monitor
-        });
-    });
 </script>
 </body>
 </html>
