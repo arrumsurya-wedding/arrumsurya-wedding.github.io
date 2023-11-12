@@ -3,10 +3,10 @@ function _0x26c5(_0x475c35,_0x313271){var _0x132f18=_0x4acb();return _0x26c5=fun
 const openBtn = document.querySelector('#btnopen');
 const widget = document.querySelector('aside');
 openBtn.addEventListener('click', () => {
-    openBtn.classList.toggle('d-none');
-    widget.classList.toggle('d-none');
-    navbar.classList.remove('d-none');
-    document.querySelector("audio").play();
+	openBtn.classList.toggle('d-none');
+	widget.classList.toggle('d-none');
+	navbar.classList.remove('d-none');
+	document.querySelector("audio").play();
 });
 
 // AUDIO BUTTON
@@ -16,48 +16,82 @@ const song = document.querySelector('#song');
 let isPlaying = false;
 
 function playAudio() {
-    song.volume = 0.1;
-    song.play();
-    isPlaying = true;
+	song.volume = 0.1;
+	song.play();
+	isPlaying = true;
 }
 
 audioIconWrapper.onclick = function () {
-    if (isPlaying) {
-        song.pause();
-        audioIcon.classList.remove('bi-disc');
-        audioIcon.classList.add('bi-pause-circle');
-    } else {
-        song.play();
-        audioIcon.classList.add('bi-disc');
-        audioIcon.classList.remove('bi-pause-circle');
-    }
+	if (isPlaying) {
+		song.pause();
+		audioIcon.classList.remove('bi-disc');
+		audioIcon.classList.add('bi-pause-circle');
+	} else {
+		song.play();
+		audioIcon.classList.add('bi-disc');
+		audioIcon.classList.remove('bi-pause-circle');
+	}
 
-    isPlaying = !isPlaying;
+	isPlaying = !isPlaying;
 }
 // END AUDIO BUTTON
 
+document.addEventListener('DOMContentLoaded', function() {
+	// const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+	// const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+	// const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle-2="popover"]'))
+	// const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+	//   	return new bootstrap.Popover(popoverTriggerEl, {
+	// 	})
+	// })
+	const popoverElement = document.querySelector('[data-bs-toggle-2="popover"]');
+	const popover = new bootstrap.Popover(popoverElement, {
+		template:'<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-header bg-pink"></h3><div class="popover-body"></div></div>'
+	});
+	let popoverShown = false; // Tambahkan variabel untuk melacak apakah popover sudah ditampilkan
+
+	function showPopoverIfInSection(sectionId) {
+		const section = document.getElementById(sectionId);
+		const sectionTop = section.offsetTop;
+		const sectionBottom = sectionTop + section.offsetHeight;
+		const scrollPosition = window.scrollY;
+
+		if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom && !popoverShown) {
+			popover.show();
+			popoverShown = true; // Set variabel popoverShown menjadi true setelah popover ditampilkan
+		}
+	}
+
+	// Panggil fungsi untuk menampilkan popover jika pengguna berada di section tertentu
+	showPopoverIfInSection('gallery'); // Ganti dengan ID dari section yang ingin Anda monitor
+
+	window.addEventListener('scroll', function() {
+		showPopoverIfInSection('gallery'); // Ganti dengan ID dari section yang ingin Anda monitor
+	});
+});
+
 // COPY BUTTON
 function copyText(el) {
-    var content = el.parentElement.querySelector('.copy-content').textContent; // Mengambil konten teks dari elemen dengan kelas 'copy-content'
-    var temp = document.createElement("textarea"); // Membuat elemen textarea baru
-    document.body.appendChild(temp); // Menambahkan elemen textarea ke dalam body dokumen
-    temp.value = content.replace(/<br ?\/?>/g, "\n"); // Mengatur nilai textarea dengan konten dan mengganti tag <br> dengan newline
-    temp.select(); // Memilih teks di dalam textarea
-    temp.setSelectionRange(0, 99999); // For mobile devices
-    navigator.clipboard.writeText(temp.value);
-    // document.execCommand("copy"); // Menyalin teks terpilih ke clipboard
-    document.body.removeChild(temp); // Menghapus elemen textarea
+	var content = el.parentElement.querySelector('.copy-content').textContent; // Mengambil konten teks dari elemen dengan kelas 'copy-content'
+	var temp = document.createElement("textarea"); // Membuat elemen textarea baru
+	document.body.appendChild(temp); // Menambahkan elemen textarea ke dalam body dokumen
+	temp.value = content.replace(/<br ?\/?>/g, "\n"); // Mengatur nilai textarea dengan konten dan mengganti tag <br> dengan newline
+	temp.select(); // Memilih teks di dalam textarea
+	temp.setSelectionRange(0, 99999); // For mobile devices
+	navigator.clipboard.writeText(temp.value);
+	// document.execCommand("copy"); // Menyalin teks terpilih ke clipboard
+	document.body.removeChild(temp); // Menghapus elemen textarea
 
-    var text = el.innerHTML; // Mengambil teks dari elemen yang diklik
-    el.innerHTML = el.getAttribute('data-message'); // Mengganti teks dengan nilai dari atribut 'data-message'
-    
-    var counter = 0;
-    var interval = setInterval(function() {
-        counter++;
-        if (counter == 1) {
-            el.innerHTML = text; // Mengembalikan teks ke keadaan semula
-            clearInterval(interval); // Menghentikan interval
-        }
-    }, 500);
+	var text = el.innerHTML; // Mengambil teks dari elemen yang diklik
+	el.innerHTML = el.getAttribute('data-message'); // Mengganti teks dengan nilai dari atribut 'data-message'
+	
+	var counter = 0;
+	var interval = setInterval(function() {
+		counter++;
+		if (counter == 1) {
+			el.innerHTML = text; // Mengembalikan teks ke keadaan semula
+			clearInterval(interval); // Menghentikan interval
+		}
+	}, 500);
 }
 // END COPY BUTTON
