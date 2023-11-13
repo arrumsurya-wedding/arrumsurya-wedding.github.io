@@ -16,8 +16,8 @@ const currentTime = new Date().getHours();
 greetingText += ',Tamu undangan yang terhormat';
 const utterance = new SpeechSynthesisUtterance();
 utterance.text = greetingText;
-utterance.pitch = .5;
-utterance.volume = 0.5;
+utterance.pitch = 1;
+utterance.volume = .5;
 utterance.lang = "id-ID";
 utterance.onend = function() {
 	document.querySelector("audio").play();
