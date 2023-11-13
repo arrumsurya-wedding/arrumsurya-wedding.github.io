@@ -2,11 +2,31 @@ function _0x26c5(_0x475c35,_0x313271){var _0x132f18=_0x4acb();return _0x26c5=fun
 
 const openBtn = document.querySelector('#btnopen');
 const widget = document.querySelector('aside');
+let greetingText = '';
+const currentTime = new Date().getHours();
+	if (currentTime >= 5 && currentTime < 12) {
+		greetingText = "Selamat Pagi";
+	} else if (currentTime >= 12 && currentTime < 18) {
+		greetingText = "Selamat Siang";
+	} else if (currentTime >= 18 && currentTime < 24) {
+		greetingText = "Selamat Sore";
+	} else {
+		greetingText = "Selamat Malam";
+	}
+greetingText += ',Tamu undangan yang terhormat';
+const utterance = new SpeechSynthesisUtterance();
+utterance.text = greetingText;
+utterance.pitch = .5;
+utterance.volume = 0.5;
+utterance.lang = "id-ID";
+utterance.onend = function() {
+	document.querySelector("audio").play();
+};
 openBtn.addEventListener('click', () => {
 	openBtn.classList.toggle('d-none');
 	widget.classList.toggle('d-none');
 	navbar.classList.remove('d-none');
-	document.querySelector("audio").play();
+	speechSynthesis.speak(utterance);
 });
 
 // AUDIO BUTTON
