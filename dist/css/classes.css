@@ -2,7 +2,10 @@
 	font-family: "Sacramento", cursive;
 	font-weight: bold;
 	color: #f14e95;
-} 
+}
+.f-tangerine {
+	font-family: 'Tangerine', cursive;
+}
 .f-arabic {
 	font-family: 'Noto Naskh Arabic', serif;
 }
