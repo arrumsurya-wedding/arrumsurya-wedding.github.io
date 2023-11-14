@@ -116,7 +116,6 @@ function copyText(el) {
 }
 // END COPY BUTTON
 
-
 window.addEventListener("load", function () {
 	const form = document.getElementById('my-form');
 	form.addEventListener("submit", function (e) {
