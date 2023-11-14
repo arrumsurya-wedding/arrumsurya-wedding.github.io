@@ -16,11 +16,11 @@ const currentTime = new Date().getHours();
 greetingText += ',Tamu undangan yang terhormat';
 const utterance = new SpeechSynthesisUtterance();
 utterance.text = greetingText;
-utterance.pitch = 1;
+utterance.pitch = .5;
 utterance.volume = .5;
 utterance.lang = "id-ID";
 utterance.onend = function() {
-	document.querySelector("audio").play();
+	playAudio();
 };
 openBtn.addEventListener('click', () => {
 	openBtn.classList.toggle('d-none');
@@ -115,3 +115,21 @@ function copyText(el) {
 	}, 500);
 }
 // END COPY BUTTON
+
+
+window.addEventListener("load", function () {
+	const form = document.getElementById('my-form');
+	form.addEventListener("submit", function (e) {
+		e.preventDefault();
+		const data = new FormData(form);
+		const action = e.target.action;
+		fetch(action, {
+			method: 'POST',
+			body: data,
+		})
+			.then(() => {
+				alert("Konfirmasi kehadiran berhasil terkirim!");
+			})
+	});
+});
+
