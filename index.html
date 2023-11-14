@@ -429,37 +429,49 @@
 	<!-- RSVP -->
 	<section id="rsvp" class="rsvp">
 		<div class="container">
+			
+			<!-- Heading -->
 			<div class="row justify-content-center">
-				<div class="col-md-8 col-10 text-center">
+				<div class="col-md-8 col-12 text-center">
 					<h2>Konfirmasi Kehadiran</h2>
 					<p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
 				</div>
 			</div>
 
-			<form class="row row-cols-md-auto g-2 justify-content-center align-items-end" method="POST"
-				action="https://script.google.com/macros/s/AKfycbyddFbEJRqwEeA6OmZAuNf0jw_B30ZUOS5qSDwlAKV_nurcW7H6osJx2ZWnIeTmPm_35g/exec"
-				id="my-form">
-				<div class="col-5">
+			<!-- Reservation -->
+			<form action="https://script.google.com/macros/s/AKfycbybBEhobQuw9emQHjEYjPndBPHWvI_5yyUesMGvWjuPI1b78ic9n7OpN_LuD1KNcv60/exec" method="post" class="row row-cols-md-auto g-3 justify-content-center align-items-center">
+				<div class="col-3">
+					<div class="mb-3">
 						<label for="nama" class="form-label">Nama</label>
 						<input type="text" class="form-control" id="nama" name="nama" autocomplete="off">
+					</div>
 				</div>
+	
 				<div class="col-2">
+					<div class="mb-3">
 						<label for="jumlah" class="form-label">Jumlah</label>
 						<input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1" value="1">
+					</div>
 				</div>
+	
 				<div class="col-4">
+					<div class="mb-3">
 						<label for="status" class="form-label">Konfirmasi</label>
 						<select name="status" id="status" class="form-select">
 							<option selected>Pilih salah satu</option>
-							<option value="Hadir">Hadir</option>
-							<option value="Tidak Hadir">Tidak Hadir</option>
+							<option value="1">Hadir</option>
+							<option value="0">Tidak Hadir</option>
 						</select>
+					</div>
 				</div>
-				<div class="col-lg-1 col-11 mt-3">
-					<button class="btn btn-pink">Kirim</button>
+	
+				<div class="col-2">
+					<label class="form-label"></label>
+					<button class="btn btn-primary form-control mb-2">Kirim</button>
 				</div>
 			</form>
 			
+			<!-- Comment Section -->
 			<div class="row mt-3 g-2 justify-content-center align-items-center">
 				<div class="col-lg-6 col-11">
 					<h3>Komentar</h3>
