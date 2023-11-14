@@ -110,6 +110,8 @@ document.querySelector("#voices").addEventListener("change", () => {
 document.querySelector("#start").addEventListener("click", () => {
 	// Set the text property with the value of the textarea
 	speech.text = document.querySelector("textarea").value;
+    speech.volume = document.querySelector("#volume").value;
+    speech.pitch = document.querySelector("#pitch").value;
 
 	// Start Speaking
 	window.speechSynthesis.speak(speech);
