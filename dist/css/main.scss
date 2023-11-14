@@ -180,7 +180,7 @@ nav {
 				top: 71px;
 				right: -13px;
 			}
-            // EXAMPLE
+			// EXAMPLE
 			.timeline-panel.first-child::after {
 				border-left: 14px solid #f14e95;
 				border-right: 0 solid #f14e95;
@@ -234,6 +234,11 @@ nav {
 }
 
 // Media Query
+@media (min-width: 768px) {
+	.bottom-lg-n10 {
+		bottom: -15% !important;
+	}
+}
 // Laptop
 @media (max-width: 992px) {
 	#story {
