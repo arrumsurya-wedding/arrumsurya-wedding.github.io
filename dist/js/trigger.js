@@ -132,4 +132,3 @@ window.addEventListener("load", function () {
 			})
 	});
 });
-
