@@ -10,6 +10,10 @@
 		<div class="row justify-content-center">
 			<div class="col-md-5 border border-dark p-3">
 				<h3>Font Setting</h3>
+				<!-- Add the form-control class -->
+				<input name="gfont" id="gfont" autocomplete="off">
+				<button onclick="getFont()">Input link G-Font</button>
+				<br>
 				<label for="family">Font Family:</label>
 				<!-- Add the form-control class -->
 				<input list="familys" name="family" id="family" onchange="updateFont()" class="form-control">
@@ -112,6 +116,20 @@
 		</div>
 	</div>
 	<script>
+		function getFont() {
+			var gfont = document.getElementById("gfont").value;
+			// Membuat elemen link
+			// var linkElement = document.createElement('link');
+
+			// // Mengatur atribut-atribut elemen link
+			// linkElement.rel = 'stylesheet';
+			// linkElement.type = 'text/css';
+			// linkElement.href = gfont; // Ganti 'styles.css' dengan path file CSS Anda
+
+			// Mengakses elemen head dan menambahkan elemen link ke dalamnya
+			// document.head.appendChild(linkElement);
+			document.head.innerHTML += gfont;
+		}
 		function updateFont() {
 			// Get the input values
 			var family = document.getElementById("family").value;
