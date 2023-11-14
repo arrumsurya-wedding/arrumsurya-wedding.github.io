@@ -212,6 +212,11 @@ nav .wrapper a.active span {
   border-radius: 100%;
 }
 
+@media (min-width: 768px) {
+  .bottom-lg-n10 {
+    bottom: -15% !important;
+  }
+}
 @media (max-width: 992px) {
   #story .timeline::before {
     left: 60px;
