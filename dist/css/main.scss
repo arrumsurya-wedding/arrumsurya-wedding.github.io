@@ -41,8 +41,28 @@ body {
 	overflow-x: hidden;
 	font-family: 'Work Sans', sans-serif;
 	color: #fff;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    .btn-pink, .btn-outline-pink {
+        text-shadow: none;
+    }
 	aside {
-		height: calc(25vh);
+		.widget {
+            width: 40px;
+            height: 40px;
+            position: fixed;
+            z-index: 99;
+            border-radius: 50%;
+            bottom: 90px;
+        }
+        .left-custom {
+            left: 2rem;
+        }
+        .right-custom {
+            right: 2rem;
+        }
+        .donation {
+            bottom: calc(90px + 40px + 2rem) !important;
+        }
 		// Audio
 		.icon-wrapper {
 			width: 2.5rem;
@@ -95,9 +115,6 @@ nav {
 			background-color: $pink;
 			color: rgb(253, 251, 247);
 			border-radius: 100px;
-			// i {
-			//     display: none;
-			// }
 			span {
 				margin-left: 0.3rem;
 				display: inline !important;
