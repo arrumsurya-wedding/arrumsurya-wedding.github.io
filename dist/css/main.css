@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Tangerine&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap");
 .bg-canvas {
   position: fixed;
   top: 0;
@@ -233,6 +233,11 @@ nav .wrapper a.active span {
 @media (min-width: 768px) {
   .bottom-lg-n10 {
     bottom: -15% !important;
+  }
+  .display-lg-5 {
+    font-size: calc(1.425rem + 2.1vw);
+    font-weight: 300;
+    line-height: 1.2;
   }
 }
 @media (max-width: 992px) {
