@@ -7,7 +7,7 @@
 // Sacramento : For title font
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 // Noto Naskh Arabic
-@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
 // font: style variant weight stretch size line-height family;
 
 $pink: #f14e95;
@@ -41,28 +41,28 @@ body {
 	overflow-x: hidden;
 	font-family: 'Work Sans', sans-serif;
 	color: #fff;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-    .btn-pink, .btn-outline-pink {
-        text-shadow: none;
-    }
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+	.btn-pink, .btn-outline-pink {
+		text-shadow: none;
+	}
 	aside {
 		.widget {
-            width: 40px;
-            height: 40px;
-            position: fixed;
-            z-index: 99;
-            border-radius: 50%;
-            bottom: 90px;
-        }
-        .left-custom {
-            left: 2rem;
-        }
-        .right-custom {
-            right: 2rem;
-        }
-        .donation {
-            bottom: calc(90px + 40px + 2rem) !important;
-        }
+			width: 40px;
+			height: 40px;
+			position: fixed;
+			z-index: 99;
+			border-radius: 50%;
+			bottom: 90px;
+		}
+		.left-custom {
+			left: 2rem;
+		}
+		.right-custom {
+			right: 2rem;
+		}
+		.donation {
+			bottom: calc(90px + 40px + 2rem) !important;
+		}
 		// Audio
 		.icon-wrapper {
 			width: 2.5rem;
@@ -254,6 +254,11 @@ nav {
 @media (min-width: 768px) {
 	.bottom-lg-n10 {
 		bottom: -15% !important;
+	}
+	.display-lg-5 {
+		font-size:calc(1.425rem + 2.1vw);
+		font-weight:300;
+		line-height:1.2
 	}
 }
 // Laptop
