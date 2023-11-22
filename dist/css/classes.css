@@ -45,3 +45,6 @@
 .rasio-1x1 {
 	aspect-ratio: 1/1;
 }
+.text-black {
+	text-shadow: none;
+}
