@@ -221,8 +221,13 @@ nav .wrapper a.active span {
   left: 50%;
 }
 
-#modal .nav-pills > .nav-link {
+#modal .nav-pills .nav-link {
   border-radius: 4px 4px 0 0;
+  color: black;
+}
+#modal .nav-pills .nav-link.active {
+  background-color: #6c757d;
+  color: white;
 }
 #modal .carousel-indicators [data-bs-target] {
   width: 10px;
