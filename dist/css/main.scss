@@ -240,8 +240,15 @@ nav {
 
 // MODAL SECTION
 #modal {
-	.nav-pills > .nav-link {
-		border-radius: 4px 4px 0 0;
+	.nav-pills {
+		.nav-link {
+			border-radius: 4px 4px 0 0;
+			color: black;
+		}
+		.nav-link.active {
+			background-color: #6c757d;
+			color: white;
+		}
 	}
 	.carousel-indicators [data-bs-target] {
 		width: 10px; // change width
