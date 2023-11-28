@@ -370,25 +370,6 @@
 					<img src="./dist/img/gallery/sumatra6.jpeg" style="object-position: 50% 20%;" class="thumbnail rounded-3" alt="Image 1">
 					<img src="./dist/img/gallery/sumatra7.jpg" style="object-position: 50% 30%;" class="thumbnail rounded-3" alt="Image 1">
 					<img src="./dist/img/gallery/sumatra8.jpeg" style="object-position: 50% 30%;" class="thumbnail rounded-3" alt="Image 1">
-					<script>
-						const thumbnails = document.querySelectorAll('img.thumbnail');
-						const imageList = Array.from(thumbnails).map(img => img.src);
-						let currentImageIndex = 0;
-				
-						const fadeInNextImage = () => {
-							// Sembunyikan gambar yang terlihat
-							thumbnails.forEach(thumbnail => thumbnail.style.display = 'none');
-				
-							// Tampilkan gambar berikutnya
-							currentImageIndex = (currentImageIndex + 1) % imageList.length;
-							thumbnails[currentImageIndex].style.display = 'block';
-						};
-				
-						fadeInNextImage(); // Tampilkan gambar pertama saat halaman dimuat
-				
-						// Setelah animasi selesai, panggil fungsi untuk menampilkan gambar berikutnya
-						thumbnails.forEach(thumbnail => thumbnail.addEventListener('animationiteration', fadeInNextImage));
-					</script>
 				</figure>
 				<!-- The slideshow/carousel -->
 				<div class="carousel-inner">
