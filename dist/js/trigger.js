@@ -92,15 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // COPY BUTTON
 function copyText(el) {
-	var content = el.parentElement.querySelector('.copy-content').textContent; // Mengambil konten teks dari elemen dengan kelas 'copy-content'
-	var temp = document.createElement("textarea"); // Membuat elemen textarea baru
-	document.body.appendChild(temp); // Menambahkan elemen textarea ke dalam body dokumen
-	temp.value = content.replace(/<br ?\/?>/g, "\n"); // Mengatur nilai textarea dengan konten dan mengganti tag <br> dengan newline
-	temp.select(); // Memilih teks di dalam textarea
-	temp.setSelectionRange(0, 99999); // For mobile devices
-	navigator.clipboard.writeText(temp.value);
-	// document.execCommand("copy"); // Menyalin teks terpilih ke clipboard
-	document.body.removeChild(temp); // Menghapus elemen textarea
+	var content = el.previousElementSibling.innerHTML; // Mengambil konten teks dari elemen sebelumnya dengan class 'copy-content'
+	navigator.clipboard.writeText(content);
 
 	var text = el.innerHTML; // Mengambil teks dari elemen yang diklik
 	el.innerHTML = el.getAttribute('data-message'); // Mengganti teks dengan nilai dari atribut 'data-message'
@@ -112,7 +105,7 @@ function copyText(el) {
 			el.innerHTML = text; // Mengembalikan teks ke keadaan semula
 			clearInterval(interval); // Menghentikan interval
 		}
-	}, 500);
+	}, 1000);
 }
 // END COPY BUTTON
 
