@@ -48,11 +48,3 @@
 .text-black {
 	text-shadow: none;
 }
-.thumbnail {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	opacity: 0;
-	animation: breathe 5s infinite;
-	display: none;
-}
