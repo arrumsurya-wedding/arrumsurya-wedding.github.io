@@ -69,7 +69,8 @@ document.getElementById('commentForm').addEventListener('submit', function(event
 
 	var commentData = {
 		name: name,
-		message: message
+		message: message,
+		timestamp: firebase.database.ServerValue.TIMESTAMP
 	};
 
 	var newCommentKey = firebase.database().ref().child('comments').push().key;
@@ -84,19 +85,24 @@ document.getElementById('commentForm').addEventListener('submit', function(event
 
 var commentList = document.getElementById('commentList');
 
-firebase.database().ref('comments').on('child_added', function(snapshot) {
-	var commentData = snapshot.val();
+firebase.database().ref('comments').orderByChild('timestamp').on('value', function(snapshot) {
+	commentList.innerHTML = ''; // Kosongkan elemen commentList sebelum menambahkan data baru
 
-	var newComment = document.createElement('div');
-	newComment.className = 'd-flex mb-2';
-	newComment.innerHTML = `
-		<div class="p-2">
-			<i class="bi bi-person-circle" style="font-size: 3rem;"></i>
-		</div>
-		<div class="flex-grow-1 p-2 border rounded me-2">
-			<strong>${commentData.name}</strong><br>${commentData.message}
-		</div>
-	`;
+	snapshot.forEach(function(childSnapshot) {
+		var commentData = childSnapshot.val();
 
-	commentList.appendChild(newComment);
+		var newComment = document.createElement('div');
+		newComment.className = 'd-flex mb-2';
+		newComment.innerHTML = `
+			<div class="p-2">
+				<i class="bi bi-person-circle" style="font-size: 3rem;"></i>
+			</div>
+			<div class="flex-grow-1 p-2 border rounded me-2">
+				<strong>${commentData.name}</strong><br>${commentData.message}
+			</div>
+		`;
+
+		// Gunakan unshift agar elemen baru ditambahkan di awal
+		commentList.insertBefore(newComment, commentList.firstChild);
+	});
 });
