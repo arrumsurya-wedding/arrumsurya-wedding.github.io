@@ -26,7 +26,8 @@ openBtn.addEventListener('click', () => {
 	openBtn.classList.toggle('d-none');
 	widget.classList.toggle('d-none');
 	navbar.classList.remove('d-none');
-	speechSynthesis.speak(utterance);
+	// speechSynthesis.speak(utterance);
+	playAudio()
 });
 
 // AUDIO BUTTON
@@ -36,7 +37,7 @@ const song = document.querySelector('#song');
 let isPlaying = false;
 
 function playAudio() {
-	song.volume = 0.1;
+	song.volume = 0.3;
 	song.play();
 	isPlaying = true;
 }
