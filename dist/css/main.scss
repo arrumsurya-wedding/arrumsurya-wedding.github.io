@@ -6,10 +6,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 // Sacramento : For title font
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-// Noto Naskh Arabic
-@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+// LPMQ : For arabic font
+@font-face{
+	font-family:'LPMQ';
+	src:url('https://uminabdillah.github.io/fonts/lpmq.eot');
+	src:url('https://uminabdillah.github.io/fonts/lpmq.eot?#iefix') format('embedded-opentype'),
+	url('https://uminabdillah.github.io/fonts/lpmq.ttf') format('truetype');
+	font-weight:400;
+	font-weight:normal;
+	font-display: swap;
+}
 // font: style variant weight stretch size line-height family;
-
 $pink: #f14e95;
 .bg-canvas {
 	position: fixed;
@@ -337,6 +344,10 @@ nav {
 				left: -13px;
 				right: auto;
 			}
+			.timeline li .timeline-panel.first-child::after {
+				border-left: 0 solid #f14e95 !important;
+				border-right: 14px solid #f14e95 !important;
+			}
 		}
 	}
 }
@@ -349,6 +360,10 @@ nav {
 		.timeline li .timeline-image {
 			width: 140px;
 			height: 140px;
+		}
+		.timeline li .timeline-panel.first-child::after {
+			border-left: 0 solid #f14e95;
+			border-right: 14px solid #f14e95;
 		}
 	}
 }
