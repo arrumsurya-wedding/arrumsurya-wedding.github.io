@@ -2,7 +2,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Tangerine&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap");
+@font-face {
+  font-family: "LPMQ";
+  src: url("https://uminabdillah.github.io/fonts/lpmq.eot");
+  src: url("https://uminabdillah.github.io/fonts/lpmq.eot?#iefix") format("embedded-opentype"), url("https://uminabdillah.github.io/fonts/lpmq.ttf") format("truetype");
+  font-weight: 400;
+  font-weight: normal;
+  font-display: swap;
+}
 .bg-canvas {
   position: fixed;
   top: 0;
@@ -304,12 +311,20 @@ nav .wrapper a.active span {
     left: -13px;
     right: auto;
   }
+  #story .timeline li .timeline li .timeline-panel.first-child::after {
+    border-left: 0 solid #f14e95 !important;
+    border-right: 14px solid #f14e95 !important;
+  }
 }
 /* tablet */
 @media (max-width: 768px) {
   #story .timeline li .timeline-image {
     width: 140px;
     height: 140px;
+  }
+  #story .timeline li .timeline-panel.first-child::after {
+    border-left: 0 solid #f14e95;
+    border-right: 14px solid #f14e95;
   }
 }
 /* mobile phone */
