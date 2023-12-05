@@ -51,6 +51,11 @@
 </nav>
 
 <main data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+	<!-- PRELOADER -->
+	<div style="height: 100vh;transition: height 200ms linear;" class="preloader w-100 fixed-top bg-danger-subtle overflow-hidden d-flex flex-column justify-content-center align-items-center">
+		<img class="animation__shake" src="./dist/img/favicon.svg" alt="AdminLTELogo" height="60" width="60">
+	</div>
+
 	<!-- COVER SECTION -->
 	<section id="cover" class="position-relative">
 		<center class="m-auto d-flex flex-column align-items-center">
@@ -920,10 +925,12 @@
 <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
 <!-- CUSTOM -->
-<script src="./dist/js/trigger.js"></script>
+<script src="./dist/js/loader.js"></script>
 <script src="./dist/js/features.js"></script>
-<script>
+<script src="./dist/js/trigger.js"></script>
 
+<script>
+	
 </script>
 </body>
 </html>
