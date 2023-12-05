@@ -19,6 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		// Optionally, you can add a delay before hiding the loader
 		setTimeout(function() {
 			loader.style.height = '0';
-		}, 500);
+		}, 1000);
 	});
 });
