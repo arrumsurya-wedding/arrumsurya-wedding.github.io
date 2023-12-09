@@ -1,0 +1,51 @@
+.f-sacramento {
+	font-family: "Sacramento", cursive;
+	font-weight: bold;
+	color: #f14e95;
+}
+.f-tangerine {
+	font-family: 'Tangerine', cursive;
+}
+.f-arabic{
+	font-family: LPMQ,"Traditional Arabic",Tahoma,sans-serif;
+	direction: rtl;
+}
+.f-dancing {
+	font-family: 'Dancing Script', cursive;
+}
+.text-pink {
+	color: #f14e95;
+}
+.bg-pink {
+	background-color: #f14e95 !important;
+}
+.btn-outline-pink {
+	display: inline-block;
+	padding: 0.375rem 0.75rem;
+	border-radius: 0.375rem;
+	text-decoration: none;
+	color: #f14e95;
+	background-color: white;
+}
+.btn-outline-pink:hover {
+	color: white;
+	background-color: #f14e95;
+}
+.btn-pink {
+	display: inline-block;
+	padding: 0.375rem 0.75rem;
+	border-radius: 0.375rem;
+	text-decoration: none;
+	color: white;
+	background-color: #f14e95;
+}
+.btn-pink:hover {
+	color: #f14e95;
+	background-color: white;
+}
+.rasio-1x1 {
+	aspect-ratio: 1/1;
+}
+.text-black {
+	text-shadow: none;
+}
