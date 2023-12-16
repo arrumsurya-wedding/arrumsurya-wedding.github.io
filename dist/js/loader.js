@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 	// URL to text content
 	const urlParams = new URLSearchParams(window.location.search);
-	const nama = urlParams.get('n') || '';
+	const nama = urlParams.get('to') || '';
 	const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
 	const namaContainer = document.querySelector('#cover h3');
 	namaContainer.innerText = `${pronoun}, ${nama}`.replace(/ ,$/, ',');
