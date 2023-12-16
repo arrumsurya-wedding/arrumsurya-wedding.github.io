@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
 	// URL to text content
 	const urlParams = new URLSearchParams(window.location.search);
-	const nama = urlParams.get('to') || '';
-	const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
+	const nama = urlParams.get('to') || 'Tamu Undangan';
+	const pronoun = urlParams.get('p') || '';
 	const namaContainer = document.querySelector('#cover h3');
-	namaContainer.innerText = `${pronoun}, ${nama}`.replace(/ ,$/, ',');
+	namaContainer.innerText = `${pronoun}${nama}`.replace(/ ,$/, ',');
 
 	document.querySelector('#nama').value = nama;
 	// End URL to text content
