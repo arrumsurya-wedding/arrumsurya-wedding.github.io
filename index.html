@@ -728,27 +728,48 @@
 </aside>
 
 <!-- <style>
-	.background-music{position:fixed;bottom:16px;left:16px;max-width:calc(100vw - 32px);z-index:1020}
-	.background-music .btn,.background-music .addtocalendar .atcb-link,.addtocalendar .background-music .atcb-link{background:rgba(0,0,0,0.75);height:32px;width:32px;overflow:hidden;transition:all 2s ease;border-radius:16px;white-space:nowrap}
-	.background-music.is-played .btn>*:not(.background-music-pause-icon,.background-music-credit),.background-music.is-played .addtocalendar .atcb-link>*:not(.background-music-pause-icon,.background-music-credit),.addtocalendar .background-music.is-played .atcb-link>*:not(.background-music-pause-icon,.background-music-credit){display:none}
-	.background-music.is-played.is-expanded .btn,.background-music.is-played.is-expanded .addtocalendar .atcb-link,.addtocalendar .background-music.is-played.is-expanded .atcb-link,.background-music.is-played .btn:hover,.background-music.is-played .addtocalendar .atcb-link:hover,.addtocalendar .background-music.is-played .atcb-link:hover{width:100%}
-	.background-music.is-paused .btn>*:not(.background-music-play-icon),.background-music.is-paused .addtocalendar .atcb-link>*:not(.background-music-play-icon),.addtocalendar .background-music.is-paused .atcb-link>*:not(.background-music-play-icon){display:none};
-	@media (max-width:767.98px){
-		.navbar-mobile ~ .background-music{bottom:64px}.navbar-mobile.navbar-mobile-floating ~ .background-music{bottom:79px}
+	.background-music{
+		position:fixed;
+		bottom:90px;
+		left:2rem;
+		max-width:calc(100vw - 32px);
+		z-index:1020;
+	}
+	.background-music .btn,.background-music .addtocalendar .atcb-link,.addtocalendar .background-music .atcb-link{
+		background:rgb(241, 78, 149);
+		height:40px;
+		width:40px;
+		overflow:hidden;
+		transition:all 1.5s ease;
+		border-radius:20px;
+		white-space:nowrap
+	}
+	.background-music.is-played .btn>*:not(.background-music-pause-icon,.background-music-credit),.background-music.is-played .addtocalendar .atcb-link>*:not(.background-music-pause-icon,.background-music-credit),.addtocalendar .background-music.is-played .atcb-link>*:not(.background-music-pause-icon,.background-music-credit){
+		display:none;
+	}
+	.background-music.is-played.is-expanded .btn,.background-music.is-played.is-expanded .addtocalendar .atcb-link,.addtocalendar .background-music.is-played.is-expanded .atcb-link,.background-music.is-played .btn:hover,.background-music.is-played .addtocalendar .atcb-link:hover,.addtocalendar .background-music.is-played .atcb-link:hover{
+		width:100%;
+	}
+	.background-music.is-paused .btn>*:not(.background-music-play-icon),.background-music.is-paused .addtocalendar .atcb-link>*:not(.background-music-play-icon),.addtocalendar .background-music.is-paused .atcb-link>*:not(.background-music-play-icon){
+		display:none;
 	}
 </style>
-<div class="background-music is-paused">
-	<a class="btn btn-dark btn-sm text-white">
+<div class="background-music is-played">
+	<audio id="song" loop>
+		<source src="./dist/audio.mp3" type="audio/mp3">
+	</audio>
+
+	<a class="btn btn-dark btn-sm text-white d-flex flex-row align-items-center">
 		<span class="background-music-spinner">
 			<i class="fas fa-spinner fa-pulse fa-fw"></i>
 		</span>
 		<span class="background-music-play-icon">
-			<i class="bi bi-play-fill"></i>
+			<i class="bi bi-play-fill fs-3"></i>
 		</span>
-		<span class="background-music-pause-icon">
-			<img src="https://wedew.id/plugins/wedew/website/assets/images/music-animation.svg" alt="" width="14" height="14">
+		<span class="background-music-pause-icon mx-1">
+			<img src="https://wedew.id/plugins/wedew/website/assets/images/music-animation.svg" alt="" width="17.5" height="17.5">
 		</span>
-		<span class="background-music-credit ms-2">Komang - Raim Laode (Saxophone Cover by Desmond Amos)</span>
+		<span class="background-music-credit mx-1">Instrumen Adat</span>
 	</a>
 </div> -->
 <!-- <script>
