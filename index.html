@@ -730,7 +730,6 @@
 <!-- <style>
 	.background-music{position:fixed;bottom:16px;left:16px;max-width:calc(100vw - 32px);z-index:1020}
 	.background-music .btn,.background-music .addtocalendar .atcb-link,.addtocalendar .background-music .atcb-link{background:rgba(0,0,0,0.75);height:32px;width:32px;overflow:hidden;transition:all 2s ease;border-radius:16px;white-space:nowrap}
-	.background-music.is-loading .btn>*:not(.background-music-spinner),.background-music.is-loading .addtocalendar .atcb-link>*:not(.background-music-spinner),.addtocalendar .background-music.is-loading .atcb-link>*:not(.background-music-spinner){display:none}
 	.background-music.is-played .btn>*:not(.background-music-pause-icon,.background-music-credit),.background-music.is-played .addtocalendar .atcb-link>*:not(.background-music-pause-icon,.background-music-credit),.addtocalendar .background-music.is-played .atcb-link>*:not(.background-music-pause-icon,.background-music-credit){display:none}
 	.background-music.is-played.is-expanded .btn,.background-music.is-played.is-expanded .addtocalendar .atcb-link,.addtocalendar .background-music.is-played.is-expanded .atcb-link,.background-music.is-played .btn:hover,.background-music.is-played .addtocalendar .atcb-link:hover,.addtocalendar .background-music.is-played .atcb-link:hover{width:100%}
 	.background-music.is-paused .btn>*:not(.background-music-play-icon),.background-music.is-paused .addtocalendar .atcb-link>*:not(.background-music-play-icon),.addtocalendar .background-music.is-paused .atcb-link>*:not(.background-music-play-icon){display:none};
@@ -758,12 +757,14 @@
 			document.querySelector('.background-music').classList.toggle('is-expanded');
 			document.querySelector('.background-music').classList.add('is-played');
 			document.querySelector('.background-music').classList.remove('is-paused');
+			song.play();
 			setTimeout(() => {
 				document.querySelector('.background-music').classList.remove('is-expanded');
 			}, 4000);
 		} else {
 			document.querySelector('.background-music').classList.add('is-paused');
 			document.querySelector('.background-music').classList.remove('is-played');
+			song.pause();
 		}
 	});
 </script> -->
