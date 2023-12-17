@@ -76,16 +76,28 @@ body aside .right-custom {
 body aside .donation {
   bottom: calc(130px + 2rem) !important;
 }
-body aside .icon-wrapper {
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: yellow;
-  animation: rotating 4s linear infinite;
-  cursor: pointer;
+body aside .audio-container {
+  position: fixed;
+  bottom: 90px;
+  left: 2rem;
+}
+body aside .audio-container .btn, body aside .audio-container .addtocalendar .atcb-link, body aside .addtocalendar .audio-container .atcb-link {
+  background: rgb(241, 78, 149);
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  transition: all 1.5s ease;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+body aside .audio-container.is-played .btn > *:not(.audio-container-pause-icon, .audio-container-credit), body aside .audio-container.is-played .addtocalendar .atcb-link > *:not(.audio-container-pause-icon, .audio-container-credit), body aside .addtocalendar .audio-container.is-played .atcb-link > *:not(.audio-container-pause-icon, .audio-container-credit) {
+  display: none;
+}
+body aside .audio-container.is-played.is-expanded .btn, body aside .audio-container.is-played.is-expanded .addtocalendar .atcb-link, body aside .addtocalendar .audio-container.is-played.is-expanded .atcb-link, body aside .audio-container.is-played .btn:hover, body aside .audio-container.is-played .addtocalendar .atcb-link:hover, body aside .addtocalendar .audio-container.is-played .atcb-link:hover {
+  width: 100%;
+}
+body aside .audio-container.is-paused .btn > *:not(.audio-container-play-icon), body aside .audio-container.is-paused .addtocalendar .atcb-link > *:not(.audio-container-play-icon), body aside .addtocalendar .audio-container.is-paused .atcb-link > *:not(.audio-container-play-icon) {
+  display: none;
 }
 body section {
   display: flex;
