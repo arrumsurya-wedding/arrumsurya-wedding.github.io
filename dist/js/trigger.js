@@ -28,11 +28,13 @@ openBtn.addEventListener('click', () => {
 	navbar.classList.remove('d-none');
 	// speechSynthesis.speak(utterance);
 	playAudio()
+	document.querySelector('.audio-container').classList.toggle('is-expanded');
+	setTimeout(() => {
+		document.querySelector('.audio-container').classList.remove('is-expanded');
+	}, 1500);
 });
 
 // AUDIO BUTTON
-const audioIconWrapper = document.querySelector('.icon-wrapper');
-const audioIcon = document.querySelector('.icon-wrapper i');
 const song = document.querySelector('#song');
 let isPlaying = false;
 
@@ -42,19 +44,21 @@ function playAudio() {
 	isPlaying = true;
 }
 
-audioIconWrapper.onclick = function () {
-	if (isPlaying) {
-		song.pause();
-		audioIcon.classList.remove('bi-disc');
-		audioIcon.classList.add('bi-pause-circle');
-	} else {
+document.querySelector('.audio-container').addEventListener('click', function () {
+	if (document.querySelector('.audio-container').classList.contains('is-paused')) {
+		document.querySelector('.audio-container').classList.toggle('is-expanded');
+		document.querySelector('.audio-container').classList.add('is-played');
+		document.querySelector('.audio-container').classList.remove('is-paused');
 		song.play();
-		audioIcon.classList.add('bi-disc');
-		audioIcon.classList.remove('bi-pause-circle');
+		setTimeout(() => {
+			document.querySelector('.audio-container').classList.remove('is-expanded');
+		}, 4000);
+	} else {
+		document.querySelector('.audio-container').classList.add('is-paused');
+		document.querySelector('.audio-container').classList.remove('is-played');
+		song.pause();
 	}
-
-	isPlaying = !isPlaying;
-}
+});
 // END AUDIO BUTTON
 
 document.addEventListener('DOMContentLoaded', function() {
