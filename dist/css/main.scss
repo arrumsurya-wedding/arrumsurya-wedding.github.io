@@ -83,16 +83,28 @@ body {
 			bottom: calc(90px + 40px + 2rem) !important;
 		}
 		// Audio
-		.icon-wrapper {
-			width: 2.5rem;
-			height: 2.5rem;
-			font-size: 2.5rem;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			color: yellow;
-			animation: rotating 4s linear infinite;
-			cursor: pointer;
+		.audio-container{
+			position: fixed;
+			bottom: 90px;
+			left: 2rem;
+		}
+		.audio-container .btn,.audio-container .addtocalendar .atcb-link,.addtocalendar .audio-container .atcb-link{
+			background:rgb(241, 78, 149);
+			height: 40px;
+			width: 40px;
+			overflow: hidden;
+			transition: all 1.5s ease;
+			border-radius: 20px;
+			white-space: nowrap
+		}
+		.audio-container.is-played .btn>*:not(.audio-container-pause-icon,.audio-container-credit),.audio-container.is-played .addtocalendar .atcb-link>*:not(.audio-container-pause-icon,.audio-container-credit),.addtocalendar .audio-container.is-played .atcb-link>*:not(.audio-container-pause-icon,.audio-container-credit){
+			display: none;
+		}
+		.audio-container.is-played.is-expanded .btn,.audio-container.is-played.is-expanded .addtocalendar .atcb-link,.addtocalendar .audio-container.is-played.is-expanded .atcb-link,.audio-container.is-played .btn:hover,.audio-container.is-played .addtocalendar .atcb-link:hover,.addtocalendar .audio-container.is-played .atcb-link:hover{
+			width: 100%;
+		}
+		.audio-container.is-paused .btn>*:not(.audio-container-play-icon),.audio-container.is-paused .addtocalendar .atcb-link>*:not(.audio-container-play-icon),.addtocalendar .audio-container.is-paused .atcb-link>*:not(.audio-container-play-icon){
+			display: none;
 		}
 	}
 	section {
