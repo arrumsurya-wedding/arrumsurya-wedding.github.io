@@ -710,14 +710,20 @@
 			<i class="bi bi-gift-fill"></i>
 		</button>
 
-		<div id="audio-container" class="widget left-custom">
+		<div class="audio-container is-played">
 			<audio id="song" loop>
 				<source src="./dist/audio.mp3" type="audio/mp3">
 			</audio>
-
-			<div class="icon-wrapper">
-				<i class="bi bi-disc"></i>
-			</div>
+		
+			<a class="btn btn-dark btn-sm text-white d-flex flex-row align-items-center">
+				<span class="audio-container-play-icon">
+					<i class="bi bi-play-fill fs-3"></i>
+				</span>
+				<span class="audio-container-pause-icon mx-1">
+					<img src="https://wedew.id/plugins/wedew/website/assets/images/music-animation.svg" alt="" width="17.5" height="17.5">
+				</span>
+				<span class="audio-container-credit mx-1">Instrumen Adat</span>
+			</a>
 		</div>
 	</div>
 	<div>
@@ -727,68 +733,6 @@
 	</div>
 </aside>
 
-<!-- <style>
-	.background-music{
-		position:fixed;
-		bottom:90px;
-		left:2rem;
-		max-width:calc(100vw - 32px);
-		z-index:1020;
-	}
-	.background-music .btn,.background-music .addtocalendar .atcb-link,.addtocalendar .background-music .atcb-link{
-		background:rgb(241, 78, 149);
-		height:40px;
-		width:40px;
-		overflow:hidden;
-		transition:all 1.5s ease;
-		border-radius:20px;
-		white-space:nowrap
-	}
-	.background-music.is-played .btn>*:not(.background-music-pause-icon,.background-music-credit),.background-music.is-played .addtocalendar .atcb-link>*:not(.background-music-pause-icon,.background-music-credit),.addtocalendar .background-music.is-played .atcb-link>*:not(.background-music-pause-icon,.background-music-credit){
-		display:none;
-	}
-	.background-music.is-played.is-expanded .btn,.background-music.is-played.is-expanded .addtocalendar .atcb-link,.addtocalendar .background-music.is-played.is-expanded .atcb-link,.background-music.is-played .btn:hover,.background-music.is-played .addtocalendar .atcb-link:hover,.addtocalendar .background-music.is-played .atcb-link:hover{
-		width:100%;
-	}
-	.background-music.is-paused .btn>*:not(.background-music-play-icon),.background-music.is-paused .addtocalendar .atcb-link>*:not(.background-music-play-icon),.addtocalendar .background-music.is-paused .atcb-link>*:not(.background-music-play-icon){
-		display:none;
-	}
-</style>
-<div class="background-music is-played">
-	<audio id="song" loop>
-		<source src="./dist/audio.mp3" type="audio/mp3">
-	</audio>
-
-	<a class="btn btn-dark btn-sm text-white d-flex flex-row align-items-center">
-		<span class="background-music-spinner">
-			<i class="fas fa-spinner fa-pulse fa-fw"></i>
-		</span>
-		<span class="background-music-play-icon">
-			<i class="bi bi-play-fill fs-3"></i>
-		</span>
-		<span class="background-music-pause-icon mx-1">
-			<img src="https://wedew.id/plugins/wedew/website/assets/images/music-animation.svg" alt="" width="17.5" height="17.5">
-		</span>
-		<span class="background-music-credit mx-1">Instrumen Adat</span>
-	</a>
-</div> -->
-<!-- <script>
-	document.querySelector('.background-music').addEventListener('click', function () {
-		if (document.querySelector('.background-music').classList.contains('is-paused')) {
-			document.querySelector('.background-music').classList.toggle('is-expanded');
-			document.querySelector('.background-music').classList.add('is-played');
-			document.querySelector('.background-music').classList.remove('is-paused');
-			song.play();
-			setTimeout(() => {
-				document.querySelector('.background-music').classList.remove('is-expanded');
-			}, 4000);
-		} else {
-			document.querySelector('.background-music').classList.add('is-paused');
-			document.querySelector('.background-music').classList.remove('is-played');
-			song.pause();
-		}
-	});
-</script> -->
 <!-- <script>
 	// Clipboard
 	var clipboard = new ClipboardJS('.btn-copy');
