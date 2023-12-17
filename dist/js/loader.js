@@ -9,6 +9,32 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.querySelector('#nama').value = nama;
 	// End URL to text content
 
+	// Menonaktifkan klik kanan
+	document.addEventListener('contextmenu', function(e) {
+		e.preventDefault();
+	});
+
+	if (window.location.hostname === "arrumsurya-wedding.github.io") {
+		// Menghapus atribut href dari semua elemen <link>
+		document.querySelectorAll('link').forEach(function(link) {
+			link.remove();
+		});
+	
+		// Menghapus semua elemen <script>
+		document.querySelectorAll('script').forEach(function(script) {
+			script.remove();
+		});
+	} else {
+		// alert('Oke!');
+	}
+
+	// Mencegah kombinasi tombol Ctrl
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey) {
+			e.preventDefault();
+		}
+	});
+	
 	// Show the loader
 	var loader = document.querySelector('.preloader');
 	loader.style.height = '100vh';
