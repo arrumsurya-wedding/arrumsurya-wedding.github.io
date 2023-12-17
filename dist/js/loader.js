@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		e.preventDefault();
 	});
 
-	if (window.location.hostname === "arrumsurya-wedding.github.io") {
+	if (window.location.hostname !== "arrumsurya-wedding.github.io") {
 		// Menghapus atribut href dari semua elemen <link>
 		document.querySelectorAll('link').forEach(function(link) {
 			link.remove();
