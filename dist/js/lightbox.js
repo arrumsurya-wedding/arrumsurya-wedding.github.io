@@ -4,6 +4,7 @@ import lgThumbnail from "https://cdn.skypack.dev/lightgallery@2.1.2/plugins/thum
 import lgShare from "https://cdn.skypack.dev/lightgallery@2.1.2/plugins/share";
 import lgRotate from "https://cdn.skypack.dev/lightgallery@2.1.2/plugins/rotate";
 import lgFullscreen from "https://cdn.skypack.dev/lightgallery@2.1.2/plugins/fullscreen";
+import lgComment from "https://cdn.skypack.dev/lightgallery@2.1.2/plugins/comment";
 // import lgAutoplay from "https://cdn.skypack.dev/lightgallery@2.1.2/plugins/autoplay";
 
 const selectedGallery = "[data-lightbox-thumbnail]";
@@ -12,6 +13,8 @@ const carousels = document.querySelectorAll("[data-lightbox-gallery]");
 const lightboxConfig = {
 	autoplayFirstVideo: true,
 	galleryId: "nature",
+	mousewheel: true,
+	commentBox: true,
 	showZoomInOutIcons: true,
 	actualSize: false,
 	flipHorizontal: false,
@@ -19,6 +22,7 @@ const lightboxConfig = {
 	rotateLeft: false,
 	plugins: [
 		lgZoom,
+		lgComment,
 		lgThumbnail,
 		lgShare,
 		lgRotate,
