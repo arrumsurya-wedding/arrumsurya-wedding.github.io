@@ -7,8 +7,9 @@ import lgRotate from "https://cdn.skypack.dev/lightgallery@2.1.2/plugins/rotate"
 import lgFullscreen from "https://cdn.skypack.dev/lightgallery@2.1.2/plugins/fullscreen";
 
 const selectedGallery = "[data-lightbox-thumbnail]";
+const carousels = document.querySelectorAll("[data-lightbox-gallery]");
 
-lightGallery(document.querySelector(selectedGallery), {
+const lightboxConfig = {
 	autoplayFirstVideo: true,
 	galleryId: "nature",
 	flipHorizontal: false,
@@ -21,7 +22,11 @@ lightGallery(document.querySelector(selectedGallery), {
 		lgRotate,
 		lgFullscreen,
 		// lgAutoplay
-	],
+	]
+};
+
+lightGallery(document.querySelector(selectedGallery), {
+	...lightboxConfig,
 
 	mobileSettings: {
 		//controls: false,
@@ -31,77 +36,11 @@ lightGallery(document.querySelector(selectedGallery), {
 	}
 });
 
-lightGallery(document.querySelector("[data-lightbox-gallery-1]"), {
-	autoplayFirstVideo: true,
-	galleryId: "nature",
-	flipHorizontal: false,
-	flipVertical: false,
-	rotateLeft: false,
-	plugins: [
-		lgZoom,
-		lgThumbnail,
-		lgShare,
-		lgRotate,
-		lgFullscreen
-	]
-});
+carousels.forEach((gallery, index) => {
+	const galleryId = `gallery-${index + 1}`;
 
-lightGallery(document.querySelector("[data-lightbox-gallery-2]"), {
-	autoplayFirstVideo: true,
-	galleryId: "nature",
-	flipHorizontal: false,
-	flipVertical: false,
-	rotateLeft: false,
-	plugins: [
-		lgZoom,
-		lgThumbnail,
-		lgShare,
-		lgRotate,
-		lgFullscreen
-	]
-});
-
-lightGallery(document.querySelector("[data-lightbox-gallery-3]"), {
-	autoplayFirstVideo: true,
-	galleryId: "nature",
-	flipHorizontal: false,
-	flipVertical: false,
-	rotateLeft: false,
-	plugins: [
-		lgZoom,
-		lgThumbnail,
-		lgShare,
-		lgRotate,
-		lgFullscreen
-	]
-});
-
-lightGallery(document.querySelector("[data-lightbox-gallery-4]"), {
-	autoplayFirstVideo: true,
-	galleryId: "nature",
-	flipHorizontal: false,
-	flipVertical: false,
-	rotateLeft: false,
-	plugins: [
-		lgZoom,
-		lgThumbnail,
-		lgShare,
-		lgRotate,
-		lgFullscreen
-	]
-});
-
-lightGallery(document.querySelector("[data-lightbox-gallery-5]"), {
-	autoplayFirstVideo: true,
-	galleryId: "nature",
-	flipHorizontal: false,
-	flipVertical: false,
-	rotateLeft: false,
-	plugins: [
-		lgZoom,
-		lgThumbnail,
-		lgShare,
-		lgRotate,
-		lgFullscreen
-	]
+	lightGallery(gallery, {
+		selector: ".row a",
+		...lightboxConfig
+	});
 });
