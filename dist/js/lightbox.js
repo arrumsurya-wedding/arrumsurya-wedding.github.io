@@ -10,7 +10,6 @@ const selectedGallery = "[data-lightbox-thumbnail]";
 
 lightGallery(document.querySelector(selectedGallery), {
 	autoplayFirstVideo: true,
-	pager: true,
 	galleryId: "nature",
 	flipHorizontal: false,
 	flipVertical: false,
@@ -30,4 +29,79 @@ lightGallery(document.querySelector(selectedGallery), {
 		//download: false,
 		//rotate: false
 	}
+});
+
+lightGallery(document.querySelector("[data-lightbox-gallery-1]"), {
+	autoplayFirstVideo: true,
+	galleryId: "nature",
+	flipHorizontal: false,
+	flipVertical: false,
+	rotateLeft: false,
+	plugins: [
+		lgZoom,
+		lgThumbnail,
+		lgShare,
+		lgRotate,
+		lgFullscreen
+	]
+});
+
+lightGallery(document.querySelector("[data-lightbox-gallery-2]"), {
+	autoplayFirstVideo: true,
+	galleryId: "nature",
+	flipHorizontal: false,
+	flipVertical: false,
+	rotateLeft: false,
+	plugins: [
+		lgZoom,
+		lgThumbnail,
+		lgShare,
+		lgRotate,
+		lgFullscreen
+	]
+});
+
+lightGallery(document.querySelector("[data-lightbox-gallery-3]"), {
+	autoplayFirstVideo: true,
+	galleryId: "nature",
+	flipHorizontal: false,
+	flipVertical: false,
+	rotateLeft: false,
+	plugins: [
+		lgZoom,
+		lgThumbnail,
+		lgShare,
+		lgRotate,
+		lgFullscreen
+	]
+});
+
+lightGallery(document.querySelector("[data-lightbox-gallery-4]"), {
+	autoplayFirstVideo: true,
+	galleryId: "nature",
+	flipHorizontal: false,
+	flipVertical: false,
+	rotateLeft: false,
+	plugins: [
+		lgZoom,
+		lgThumbnail,
+		lgShare,
+		lgRotate,
+		lgFullscreen
+	]
+});
+
+lightGallery(document.querySelector("[data-lightbox-gallery-5]"), {
+	autoplayFirstVideo: true,
+	galleryId: "nature",
+	flipHorizontal: false,
+	flipVertical: false,
+	rotateLeft: false,
+	plugins: [
+		lgZoom,
+		lgThumbnail,
+		lgShare,
+		lgRotate,
+		lgFullscreen
+	]
 });
