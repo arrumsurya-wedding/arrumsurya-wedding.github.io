@@ -77,17 +77,91 @@ document.getElementById('commentForm').addEventListener('submit', function(event
 
 var commentList = document.getElementById('commentList');
 
+// Fungsi untuk mendapatkan inisial dari nama
+function getInitials(name) {
+	var words = name.trim().split(/\s+/);
+
+	if (words.length === 1) {
+		// Jika hanya satu kata, ambil satu huruf pertama dari kata tersebut
+		return name.length > 0 ? name[0].toUpperCase() : "";
+	} else {
+		// Jika lebih dari satu kata, ambil huruf pertama dari kata pertama
+		// dan huruf pertama dari kata terakhir
+		var firstInitial = words[0][0];
+		var lastInitial = words[words.length - 1][0];
+
+		// Pastikan huruf pertama dari kata pertama tidak undefined
+		if (firstInitial) {
+			return (firstInitial + " " + lastInitial).toUpperCase();
+		} else {
+			// Jika undefined, kembalikan satu huruf pertama dari kata terakhir
+			return lastInitial.toUpperCase() + " ";
+		}
+	}
+}
+
+// Fungsi untuk mendapatkan kelas warna secara acak yang belum digunakan
+function getRandomUnusedColorClass(usedColors) {
+	var colorClasses = [
+		"bg-primary",
+		"bg-secondary",
+		"bg-success",
+		"bg-danger",
+		"bg-warning",
+		"bg-info",
+		"bg-dark",
+		// "bg-light",
+		// "bg-body",
+		// "bg-white",
+		// "bg-transparent"
+	];
+
+	// Filter warna yang belum digunakan
+	var availableColors = colorClasses.filter(function(colorClass) {
+		return !usedColors.includes(colorClass);
+	});
+
+	if (availableColors.length === 0) {
+		// Jika semua warna sudah digunakan, reset daftar warna yang sudah digunakan
+		usedColors = [];
+		availableColors = colorClasses;
+	}
+
+	// Pilih warna secara acak dari warna yang tersedia
+	var randomIndex = Math.floor(Math.random() * availableColors.length);
+	var chosenColor = availableColors[randomIndex];
+
+	// Tambahkan warna yang dipilih ke daftar warna yang sudah digunakan
+	usedColors.push(chosenColor);
+
+	return { chosenColor, usedColors };
+}
+
 firebase.database().ref('comments').orderByChild('timestamp').on('value', function(snapshot) {
 	commentList.innerHTML = ''; // Kosongkan elemen commentList sebelum menambahkan data baru
+
+	// Daftar warna yang sudah digunakan
+	var usedColors = [];
+
+	// Hitung total komentar
+	var totalComments = 0;
 
 	snapshot.forEach(function(childSnapshot) {
 		var commentData = childSnapshot.val();
 
 		var newComment = document.createElement('div');
 		newComment.className = 'd-flex mb-2';
+
+		// Mengambil inisial dari nama menggunakan fungsi getInitials
+		var initials = getInitials(commentData.name);
+
+		// Mendapatkan kelas warna secara acak yang belum digunakan
+		var { chosenColor, usedColors: updatedUsedColors } = getRandomUnusedColorClass(usedColors);
+		usedColors = updatedUsedColors;
+
 		newComment.innerHTML = `
-			<div class="p-2">
-				<i class="bi bi-person-circle" style="font-size: 3rem;"></i>
+			<div class="p-2 comment-avatar">
+				<div class="rounded-circle ${chosenColor} d-flex justify-content-center align-items-center" style="width: 3rem; height: 3rem;">${initials}</div>
 			</div>
 			<div class="flex-grow-1 p-2 border rounded me-2">
 				<strong>${commentData.name}</strong><br>${commentData.message}
@@ -96,5 +170,10 @@ firebase.database().ref('comments').orderByChild('timestamp').on('value', functi
 
 		// Gunakan unshift agar elemen baru ditambahkan di awal
 		commentList.insertBefore(newComment, commentList.firstChild);
+
+		totalComments++;
 	});
+
+	// Perbarui nilai total komentar
+	document.getElementById('totalComments').innerText = totalComments + ' Comments';
 });
